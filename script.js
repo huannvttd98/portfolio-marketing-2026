@@ -345,3 +345,54 @@ document.querySelectorAll('button, a').forEach(element => {
 });
 
 console.log('🚀 Portfolio Marketing Landing Page loaded successfully!');
+
+// Form Submission Handling
+const consultationForm = document.getElementById('consultation-form');
+if (consultationForm) {
+    consultationForm.addEventListener('submit', (e) => {
+        e.preventDefault();
+
+        // Check if values are filled (optional basic validation)
+        const inputs = consultationForm.querySelectorAll('input, select');
+        let isValid = true;
+        inputs.forEach(input => {
+            if (!input.value) isValid = false;
+        });
+
+        if (!isValid) {
+            alert('Vui lòng điền đầy đủ thông tin!');
+            return;
+        }
+
+        // Create Notification Element
+        const notification = document.createElement('div');
+        notification.className = 'fixed top-24 right-6 bg-emerald-500 text-white px-6 py-4 rounded-xl shadow-2xl z-[100] flex items-center gap-4 transform translate-x-[150%] transition-transform duration-500 ease-out border-l-4 border-white';
+        notification.innerHTML = `
+         <div class='bg-white bg-opacity-20 w-10 h-10 rounded-full flex items-center justify-center flex-shrink-0'>
+                <i class='fas fa-check text-xl'></i>
+            </div>
+            <div>
+                <h4 class='font-bold text-lg'>Cảm ơn!</h4>
+                <p class='text-emerald-100 text-sm'>Cảm ơn bạn, tôi sẽ liên hệ lại trong vòng 24h.</p>
+            </div>
+            `;
+        document.body.appendChild(notification);
+
+        // Animate In
+        requestAnimationFrame(() => {
+            notification.classList.remove('translate-x-[150%]');
+        });
+
+        // Reset Form
+        consultationForm.reset();
+
+        // Animate Out & Remove
+        setTimeout(() => {
+            notification.classList.add('translate-x-[150%]');
+            setTimeout(() => {
+                notification.remove();
+            }, 500);
+        }, 3000);
+    });
+}
+
