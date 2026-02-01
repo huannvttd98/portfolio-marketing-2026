@@ -10,32 +10,62 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap');
-        
+
         * {
             font-family: 'Poppins', sans-serif;
+            scroll-behavior: smooth;
         }
-        
+
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 10px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #f1f5f9;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #cbd5e1;
+            border-radius: 5px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #94a3b8;
+        }
+
         .gradient-bg {
             background: linear-gradient(135deg, #1e40af 0%, #0f172a 100%);
         }
-        
+
         .gradient-text {
             background: linear-gradient(135deg, #3b82f6 0%, #1d4ed8 100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
         }
+
+        .glass-nav {
+            background: rgba(255, 255, 255, 0.85);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+        }
+
+        .gallery-img {
+            transition: transform 0.5s ease;
+            cursor: pointer;
+        }
+        .gallery-img:hover {
+            transform: scale(1.05);
+        }
     </style>
 </head>
 <body class="bg-slate-50">
     <!-- Navigation -->
-    <nav class="fixed w-full bg-white shadow-md z-50">
+    <nav class="fixed w-full glass-nav z-50">
         <div class="container mx-auto px-6 py-4">
             <div class="flex items-center justify-between">
                 <a href="index.html" class="text-2xl font-bold gradient-text">
                     Minh<span class="text-slate-800">Marketer</span>
                 </a>
-                <a href="index.html#portfolio" class="text-slate-600 hover:text-blue-600 transition font-medium">
+                <a href="index.html#portfolio" class="text-slate-600 hover:text-blue-600 transition font-medium flex items-center">
                     <i class="fas fa-arrow-left mr-2"></i> Quay lại
                 </a>
             </div>
@@ -46,125 +76,221 @@
     <header class="pt-32 pb-20 bg-white">
         <div class="container mx-auto px-6">
             <div class="max-w-4xl mx-auto">
-                <div class="inline-block px-4 py-2 bg-blue-100 text-blue-600 rounded-full text-sm font-semibold mb-6">
-                    Performance Marketing
+                <div class="flex items-center gap-4 mb-6">
+                    <span class="px-4 py-2 bg-blue-100 text-blue-600 rounded-full text-sm font-semibold">
+                        Performance Marketing
+                    </span>
+                    <span class="px-4 py-2 bg-emerald-100 text-emerald-600 rounded-full text-sm font-semibold">
+                        <i class="fas fa-check-circle mr-1"></i> Hoàn thành
+                    </span>
                 </div>
-                <h1 class="text-4xl md:text-5xl font-bold text-slate-900 mb-6">
+                <h1 class="text-4xl md:text-5xl font-bold text-slate-900 mb-6 leading-tight">
                     Chiến dịch Tăng trưởng Doanh số cho Local Fashion Brand
                 </h1>
                 <p class="text-xl text-slate-600 mb-8 leading-relaxed">
-                    Cách tôi đã giúp một thương hiệu thời trang nội địa tăng 300% doanh thu chỉ sau 3 tháng triển khai Facebook Ads kết hợp Content Strategy.
+                    Cách tôi đã giúp một thương hiệu thời trang nội địa (The HighWear) tăng trưởng 300% doanh thu và mở rộng quy mô kinh doanh chỉ sau 90 ngày.
                 </p>
-                
+
                 <div class="grid grid-cols-2 md:grid-cols-4 gap-6 border-y border-slate-200 py-8">
                     <div>
-                        <p class="text-slate-500 text-sm mb-1">Khách hàng</p>
-                        <p class="font-bold text-slate-800">The HighWear</p>
+                        <p class="text-slate-500 text-sm mb-1 uppercase tracking-wider">Khách hàng</p>
+                        <p class="font-bold text-slate-800 text-lg">The HighWear</p>
                     </div>
                     <div>
-                        <p class="text-slate-500 text-sm mb-1">Thời gian</p>
-                        <p class="font-bold text-slate-800">3 Tháng</p>
+                        <p class="text-slate-500 text-sm mb-1 uppercase tracking-wider">Thời gian</p>
+                        <p class="font-bold text-slate-800 text-lg">90 Ngày</p>
                     </div>
                     <div>
-                        <p class="text-slate-500 text-sm mb-1">Dịch vụ</p>
-                        <p class="font-bold text-slate-800">Facebook Ads, Content</p>
+                        <p class="text-slate-500 text-sm mb-1 uppercase tracking-wider">Ngân sách</p>
+                        <p class="font-bold text-slate-800 text-lg">50M / tháng</p>
                     </div>
                     <div>
-                        <p class="text-slate-500 text-sm mb-1">Kết quả</p>
-                        <p class="font-bold text-blue-600">300% ROI</p>
+                        <p class="text-slate-500 text-sm mb-1 uppercase tracking-wider">Vai trò</p>
+                        <p class="font-bold text-slate-800 text-lg">Project Lead</p>
                     </div>
                 </div>
             </div>
         </div>
     </header>
 
-    <!-- Project Content -->
+    <!-- Detailed Content -->
     <section class="py-20 bg-slate-50">
         <div class="container mx-auto px-6">
             <div class="max-w-4xl mx-auto">
-                <!-- Challenge -->
-                <div class="mb-16">
-                    <h2 class="text-3xl font-bold text-slate-800 mb-6">Thách thức</h2>
-                    <p class="text-slate-600 mb-4 leading-relaxed">
-                        Thương hiệu The HighWear gặp khó khăn trong việc tiếp cận khách hàng mới do thị trường thời trang local brand đã bão hòa. Chi phí quảng cáo (CPM) tăng cao nhưng tỷ lệ chuyển đổi (CR) lại thấp dưới 1%.
-                    </p>
-                    <p class="text-slate-600 leading-relaxed">
-                        Họ cần một giải pháp để giảm chi phí trên mỗi đơn hàng (CPA) và tăng giá trị trung bình đơn hàng (AOV).
-                    </p>
-                </div>
 
-                <!-- Solution -->
-                <div class="mb-16">
-                    <h2 class="text-3xl font-bold text-slate-800 mb-6">Giải pháp</h2>
-                    <div class="bg-white p-8 rounded-2xl shadow-sm border border-slate-100 mb-8">
-                        <ul class="space-y-4">
+                <!-- Overview & Challenge -->
+                <div class="grid md:grid-cols-2 gap-12 mb-20 items-start">
+                    <div>
+                        <h2 class="text-3xl font-bold text-slate-800 mb-6">Thách thức</h2>
+                        <p class="text-slate-600 mb-4 leading-relaxed">
+                            Thị trường thời trang Local Brand vào năm 2024 đang bão hòa khốc liệt. The HighWear dù có sản phẩm "chất" nhưng lại gặp khó khăn trong việc tiếp cận Gen Z.
+                        </p>
+                        <ul class="space-y-3 text-slate-600">
                             <li class="flex items-start">
-                                <i class="fas fa-check-circle text-blue-600 mt-1 mr-4"></i>
-                                <div>
-                                    <h4 class="font-bold text-slate-800">Tái cấu trúc Content</h4>
-                                    <p class="text-slate-600 text-sm">Chuyển từ hình ảnh đơn điệu sang Video ngắn (Reels/TikTok) để tăng tương tác tự nhiên.</p>
-                                </div>
+                                <i class="fas fa-times-circle text-red-500 mt-1 mr-3"></i>
+                                Chi phí quảng cáo (CPM) tăng 40% so với năm ngoái.
                             </li>
                             <li class="flex items-start">
-                                <i class="fas fa-check-circle text-blue-600 mt-1 mr-4"></i>
-                                <div>
-                                    <h4 class="font-bold text-slate-800">Thử nghiệm A/B Testing</h4>
-                                    <p class="text-slate-600 text-sm">Chạy thử nghiệm 20 nhóm quảng cáo khác nhau để tìm ra nhóm khách hàng tiềm năng nhất (Winning Audience).</p>
-                                </div>
+                                <i class="fas fa-times-circle text-red-500 mt-1 mr-3"></i>
+                                Tỷ lệ khách hàng quay lại mua lần 2 cực thấp (< 5%).
                             </li>
-                            <li class="flex items-start">
-                                <i class="fas fa-check-circle text-blue-600 mt-1 mr-4"></i>
-                                <div>
-                                    <h4 class="font-bold text-slate-800">Retargeting Đa kênh</h4>
-                                    <p class="text-slate-600 text-sm">Tiếp thị lại những khách hàng đã xem giỏ hàng nhưng chưa mua bằng ưu đãi giới hạn thời gian.</p>
-                                </div>
+                             <li class="flex items-start">
+                                <i class="fas fa-times-circle text-red-500 mt-1 mr-3"></i>
+                                Lép vế trước các đối thủ lớn trên Social Media.
                             </li>
                         </ul>
                     </div>
+                    <div class="bg-white p-8 rounded-2xl shadow-lg border border-slate-100 relative overflow-hidden">
+                        <div class="absolute top-0 right-0 bg-blue-600 text-white px-4 py-1 rounded-bl-xl font-bold text-xs uppercase">Goal</div>
+                        <h3 class="text-xl font-bold text-slate-800 mb-4">Mục tiêu chiến dịch</h3>
+                        <div class="space-y-6">
+                            <div>
+                                <div class="flex justify-between text-sm font-medium text-slate-600 mb-1">
+                                    <span>Tăng trưởng doanh thu</span>
+                                    <span class="text-blue-600">300%</span>
+                                </div>
+                                <div class="w-full bg-slate-200 rounded-full h-2">
+                                    <div class="bg-blue-600 h-2 rounded-full" style="width: 100%"></div>
+                                </div>
+                            </div>
+                            <div>
+                                <div class="flex justify-between text-sm font-medium text-slate-600 mb-1">
+                                    <span>Giảm chi phí Marketing (CPA)</span>
+                                    <span class="text-blue-600">-30%</span>
+                                </div>
+                                <div class="w-full bg-slate-200 rounded-full h-2">
+                                    <div class="bg-blue-600 h-2 rounded-full" style="width: 80%"></div>
+                                </div>
+                            </div>
+                            <div>
+                                <div class="flex justify-between text-sm font-medium text-slate-600 mb-1">
+                                    <span>Tăng tỷ lệ tương tác (Engagement)</span>
+                                    <span class="text-blue-600">Top 5 Ngành</span>
+                                </div>
+                                <div class="w-full bg-slate-200 rounded-full h-2">
+                                    <div class="bg-blue-600 h-2 rounded-full" style="width: 90%"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
 
-                <!-- Visuals -->
-                <div class="mb-16">
+                <!-- Process Timeline -->
+                <div class="mb-20">
+                    <h2 class="text-3xl font-bold text-slate-800 mb-10 text-center">Quy trình thực thi</h2>
+                    <div class="relative border-l-4 border-blue-200 ml-6 md:ml-10 space-y-12">
+                        <!-- Step 1 -->
+                        <div class="relative pl-8 md:pl-12">
+                            <div class="absolute -left-[14px] top-0 bg-blue-600 w-6 h-6 rounded-full border-4 border-white shadow-md"></div>
+                            <h3 class="text-xl font-bold text-slate-800 mb-2">Tháng 1: Nghiên cứu & Audit</h3>
+                            <p class="text-slate-600">Phân tích sâu đối thủ cạnh tranh, Audit lại toàn bộ kênh Fanpage/Website. Xác định rõ chân dung khách hàng mục tiêu để (Gen Z & Young Millennials).</p>
+                        </div>
+                        <!-- Step 2 -->
+                        <div class="relative pl-8 md:pl-12">
+                            <div class="absolute -left-[14px] top-0 bg-blue-600 w-6 h-6 rounded-full border-4 border-white shadow-md"></div>
+                            <h3 class="text-xl font-bold text-slate-800 mb-2">Tháng 2: Tối ưu Content & Ads</h3>
+                            <p class="text-slate-600">Tung ra 15 mẫu video ngắn (TikTok Style) thay vì ảnh tĩnh. Chạy thử nghiệm A/B Testing liên tục để lọc ra "Winning Content".</p>
+                        </div>
+                        <!-- Step 3 -->
+                        <div class="relative pl-8 md:pl-12">
+                            <div class="absolute -left-[14px] top-0 bg-blue-600 w-6 h-6 rounded-full border-4 border-white shadow-md"></div>
+                            <h3 class="text-xl font-bold text-slate-800 mb-2">Tháng 3: Scale-up & Retargeting</h3>
+                            <p class="text-slate-600">Đẩy mạnh ngân sách vào các nhóm quảng cáo hiệu quả. Kích hoạt chuỗi Email Marketing tự động để chăm sóc khách hàng cũ.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Tools Used -->
+                <div class="mb-20">
+                    <h2 class="text-3xl font-bold text-slate-800 mb-8">Công cụ sử dụng</h2>
+                    <div class="flex flex-wrap gap-4">
+                        <div class="flex items-center gap-2 bg-white px-4 py-2 rounded-lg border border-slate-200 shadow-sm text-slate-600">
+                             <i class="fab fa-facebook text-blue-600 text-xl"></i> Facebook Ads Manager
+                        </div>
+                        <div class="flex items-center gap-2 bg-white px-4 py-2 rounded-lg border border-slate-200 shadow-sm text-slate-600">
+                             <i class="fab fa-google text-red-500 text-xl"></i> Google Analytics 4
+                        </div>
+                        <div class="flex items-center gap-2 bg-white px-4 py-2 rounded-lg border border-slate-200 shadow-sm text-slate-600">
+                             <i class="fas fa-video text-purple-600 text-xl"></i> CapCut Pro
+                        </div>
+                        <div class="flex items-center gap-2 bg-white px-4 py-2 rounded-lg border border-slate-200 shadow-sm text-slate-600">
+                             <i class="fas fa-envelope text-yellow-500 text-xl"></i> Mailchimp
+                        </div>
+                        <div class="flex items-center gap-2 bg-white px-4 py-2 rounded-lg border border-slate-200 shadow-sm text-slate-600">
+                             <i class="fas fa-palette text-pink-500 text-xl"></i> Canva Design
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Visual Gallery -->
+                <div class="mb-20">
+                    <h2 class="text-3xl font-bold text-slate-800 mb-8">Hình ảnh thực tế</h2>
                     <div class="grid md:grid-cols-2 gap-6">
-                        <div class="bg-gray-200 h-64 rounded-xl flex items-center justify-center">
-                            <span class="text-slate-400 font-medium">Hình ảnh chiến dịch 1</span>
+                        <div class="rounded-xl overflow-hidden shadow-lg h-80 group">
+                             <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=800&q=80" alt="Dashboard Report" class="w-full h-full object-cover gallery-img">
                         </div>
-                        <div class="bg-gray-200 h-64 rounded-xl flex items-center justify-center">
-                            <span class="text-slate-400 font-medium">Biểu đồ tăng trưởng</span>
+                        <div class="rounded-xl overflow-hidden shadow-lg h-80 group">
+                             <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=800&q=80" alt="Campaign Process" class="w-full h-full object-cover gallery-img">
+                        </div>
+                        <div class="col-span-1 md:col-span-2 rounded-xl overflow-hidden shadow-lg h-96 group relative">
+                             <img src="https://images.unsplash.com/photo-1542744173-8e7e53415bb0?auto=format&fit=crop&w=1600&q=80" alt="Team Working" class="w-full h-full object-cover gallery-img">
+                             <div class="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black to-transparent p-8">
+                                 <p class="text-white text-lg font-medium">Họp chiến lược Marketing hàng tuần cùng Team Marketing</p>
+                             </div>
                         </div>
                     </div>
                 </div>
 
-                <!-- Results -->
-                <div>
-                    <h2 class="text-3xl font-bold text-slate-800 mb-6">Kết quả đạt được</h2>
-                    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-                        <div class="bg-blue-600 text-white p-6 rounded-xl text-center">
-                            <p class="text-4xl font-bold mb-2">300%</p>
-                            <p class="text-blue-100">Doanh thu tăng trưởng</p>
+                <!-- Final Results -->
+                <div class="bg-blue-900 rounded-3xl p-12 text-white text-center relative overflow-hidden">
+                    <div class="absolute top-0 right-0 p-32 bg-blue-600 rounded-full blur-3xl opacity-20 transform translate-x-1/2 -translate-y-1/2"></div>
+                    <div class="absolute bottom-0 left-0 p-32 bg-purple-600 rounded-full blur-3xl opacity-20 transform -translate-x-1/2 translate-y-1/2"></div>
+
+                    <div class="relative z-10">
+                        <h2 class="text-3xl md:text-4xl font-bold mb-10">Kết quả vượt mong đợi</h2>
+                        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                            <div>
+                                <p class="text-5xl font-bold mb-2 text-blue-400 counter">300%</p>
+                                <p class="text-blue-100 text-lg">Doanh thu tăng trưởng</p>
+                            </div>
+                            <div>
+                                <p class="text-5xl font-bold mb-2 text-emerald-400 counter">10k+</p>
+                                <p class="text-blue-100 text-lg">Đơn hàng mới</p>
+                            </div>
+                            <div>
+                                <p class="text-5xl font-bold mb-2 text-purple-400 counter">2.5 Triệu</p>
+                                <p class="text-blue-100 text-lg">Lượt tiếp cận</p>
+                            </div>
                         </div>
-                        <div class="bg-slate-800 text-white p-6 rounded-xl text-center">
-                            <p class="text-4xl font-bold mb-2">-40%</p>
-                            <p class="text-slate-300">Chi phí quảng cáo</p>
-                        </div>
-                        <div class="bg-white border border-slate-200 p-6 rounded-xl text-center">
-                            <p class="text-4xl font-bold mb-2 text-slate-800">2.5X</p>
-                            <p class="text-slate-500">ROAS trung bình</p>
+                        <div class="mt-12 bg-white/10 backdrop-blur-sm p-6 rounded-xl inline-flex items-center gap-4 max-w-2xl text-left">
+                            <div class="flex-shrink-0">
+                                <img src="https://api.dicebear.com/7.x/avataaars/svg?seed=Felix" alt="Client" class="w-12 h-12 rounded-full border-2 border-white">
+                            </div>
+                            <div>
+                                <p class="italic text-slate-200 text-sm mb-1">"Minh không chỉ chạy quảng cáo giỏi, cậu ấy tư duy như một chủ doanh nghiệp. Đây là khoản đầu tư hời nhất của tôi trong năm nay."</p>
+                                <p class="font-bold text-white text-sm">- CEO The HighWear</p>
+                            </div>
                         </div>
                     </div>
                 </div>
+
             </div>
         </div>
     </section>
 
     <!-- Call to Action -->
-    <section class="py-20 gradient-bg text-center text-white">
+    <section class="py-20 text-center">
         <div class="container mx-auto px-6">
-            <h2 class="text-3xl md:text-4xl font-bold mb-6">Bạn muốn có kết quả tương tự?</h2>
-            <p class="text-xl text-blue-100 mb-8 max-w-2xl mx-auto">Hãy để tôi giúp bạn xây dựng chiến lược marketing hiệu quả và tối ưu chi phí ngay hôm nay.</p>
-            <a href="index.html#contact" class="inline-block bg-white text-blue-700 px-8 py-3 rounded-full font-bold hover:shadow-xl hover:scale-105 transition transform">
-                Liên hệ hợp tác
-            </a>
+            <h2 class="text-3xl font-bold text-slate-800 mb-6">Bạn cũng muốn bùng nổ doanh số?</h2>
+            <p class="text-xl text-slate-600 mb-8 max-w-2xl mx-auto">Mỗi dự án đều bắt đầu từ một cuộc trò chuyện. Hãy để tôi lắng nghe câu chuyện của bạn.</p>
+            <div class="flex justify-center gap-4">
+                <a href="index.html#contact" class="inline-block bg-blue-600 text-white px-8 py-3 rounded-full font-bold hover:bg-blue-700 transition shadow-lg hover:shadow-xl hover:-translate-y-1">
+                    Liên hệ ngay
+                </a>
+                <a href="index.html#portfolio" class="inline-block bg-white text-slate-700 border border-slate-300 px-8 py-3 rounded-full font-bold hover:bg-slate-50 transition">
+                    Xem dự án khác
+                </a>
+            </div>
         </div>
     </section>
 
@@ -174,5 +300,165 @@
             <p>&copy; 2026 Minh Marketing. All rights reserved.</p>
         </div>
     </footer>
+
+    <!-- Image Preview Modal -->
+    <div id="imageModal" class="fixed inset-0 z-[60] bg-black/90 hidden flex items-center justify-center p-4 opacity-0 transition-opacity duration-300">
+        <button id="closeModal" class="absolute top-6 right-6 text-white text-4xl hover:text-blue-400 transition">&times;</button>
+        <img id="modalImg" src="" alt="Preview" class="max-w-full max-h-[90vh] rounded-lg shadow-2xl transform scale-95 transition-transform duration-300">
+    </div>
+
+    <script>
+        // Animations
+        gsap.registerPlugin(ScrollTrigger);
+
+        // Header Animations
+        gsap.from("header h1", { duration: 1, y: 50, opacity: 0, ease: "power3.out" });
+        gsap.from("header p", { duration: 1, y: 30, opacity: 0, delay: 0.2, ease: "power3.out" });
+        gsap.from("header .grid > div", {
+            duration: 0.8,
+            y: 20,
+            opacity: 0,
+            stagger: 0.1,
+            delay: 0.4,
+            ease: "power2.out"
+        });
+
+        // Section Reveals
+        gsap.utils.toArray("section h2").forEach(h2 => {
+            gsap.from(h2, {
+                scrollTrigger: {
+                    trigger: h2,
+                    start: "top 80%",
+                },
+                y: 30,
+                opacity: 0,
+                duration: 0.8
+            });
+        });
+
+        // Timeline Animation
+        gsap.utils.toArray(".border-l-4 > div").forEach((item, i) => {
+            gsap.from(item, {
+                scrollTrigger: {
+                    trigger: item,
+                    start: "top 85%",
+                },
+                x: -50,
+                opacity: 0,
+                duration: 0.8,
+                delay: i * 0.2
+            });
+        });
+
+        // Numbers Counter Animation
+        gsap.utils.toArray(".counter").forEach(counter => {
+            let target = counter.innerText;
+            // Extract number and suffix
+            let numberValue = parseFloat(target.replace(/[^0-9.]/g, ""));
+            let suffix = target.replace(/[0-9.]/g, "");
+
+            ScrollTrigger.create({
+                trigger: counter,
+                start: "top 85%",
+                once: true,
+                onEnter: () => {
+                    gsap.to(counter, {
+                        innerText: numberValue,
+                        duration: 2,
+                        snap: { innerText: 1 },
+                        onUpdate: function() {
+                            counter.innerText = Math.ceil(this.targets()[0].innerText) + suffix;
+                        }
+                    });
+                }
+            });
+        });
+
+        // Image Gallery Parallax/Fade
+        gsap.utils.toArray(".gallery-img").forEach(img => {
+            gsap.from(img, {
+                scrollTrigger: {
+                    trigger: img,
+                    start: "top 90%"
+                },
+                scale: 1.1,
+                opacity: 0,
+                duration: 1
+            });
+        });
+
+
+        // Progress Bar Animation
+        gsap.utils.toArray(".bg-blue-600.h-2.rounded-full").forEach(bar => {
+            let width = bar.style.width;
+            gsap.fromTo(bar,
+                { width: "0%" },
+                {
+                    width: width,
+                    duration: 1.5,
+                    scrollTrigger: {
+                        trigger: bar,
+                        start: "top 90%"
+                    },
+                    ease: "power2.out"
+                }
+            );
+        });
+
+        // Image Preview Modal Logic
+        const modal = document.getElementById('imageModal');
+        const modalImg = document.getElementById('modalImg');
+        const closeModal = document.getElementById('closeModal');
+        const galleryImages = document.querySelectorAll('.gallery-img');
+
+        function openModal(src) {
+            modal.classList.remove('hidden');
+            // Trigger reflow
+            void modal.offsetWidth;
+            modal.classList.remove('opacity-0');
+            modalImg.src = src;
+            modalImg.classList.remove('scale-95');
+            modalImg.classList.add('scale-100');
+            document.body.style.overflow = 'hidden'; // Prevent scrolling
+        }
+
+        function closeModalFunc() {
+            modal.classList.add('opacity-0');
+            modalImg.classList.remove('scale-100');
+            modalImg.classList.add('scale-95');
+
+            setTimeout(() => {
+                modal.classList.add('hidden');
+                modalImg.src = '';
+                document.body.style.overflow = ''; // Restore scrolling
+            }, 300);
+        }
+
+        galleryImages.forEach(img => {
+            img.addEventListener('click', () => {
+                // Use a higher resolution image if available, or just the current src
+                // For this demo, we'll use the current src but replace query params for higher quality if it's unsplash
+                let highResSrc = img.src.replace('&w=800', '&w=1600').replace('&w=1600', '&w=2400');
+                openModal(highResSrc);
+            });
+        });
+
+        closeModal.addEventListener('click', closeModalFunc);
+
+        // Close on clean outside click
+        modal.addEventListener('click', (e) => {
+            if (e.target === modal) {
+                closeModalFunc();
+            }
+        });
+
+        // Close on Escape key
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && !modal.classList.contains('hidden')) {
+                closeModalFunc();
+            }
+        });
+
+    </script>
 </body>
 </html>
